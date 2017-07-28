@@ -1,0 +1,7 @@
+---
+# vars file for istio
+istio_name: istio-{{istio_ver}}
+istio_tgz: '{{istio_name}}-{{istio_platform}}.tar.gz'
+istio_tgz_url: '{{istio_mirror}}/{{istio_ver}}/{{istio_tgz}}'
+istio_install_dir: '{{istio_parent_install_dir}}/{{istio_name}}'
+istio_link_dir: '{{istio_parent_install_dir}}/istio'
