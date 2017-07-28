@@ -10,6 +10,7 @@
   become: yes
   become_user: root
   unarchive:
+    remote_src: yes
     src: /tmp/{{istio_tgz}}
     dest: '{{istio_parent_install_dir}}'
     creates: '{{istio_install_dir}}'
