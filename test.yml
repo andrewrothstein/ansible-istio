@@ -1,5 +1,5 @@
-
 ---
 - hosts: all
   roles:
     - role: '{{playbook_dir}}'
+      istio_cleanup: True

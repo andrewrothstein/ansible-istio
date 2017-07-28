@@ -6,3 +6,5 @@ istio_mirror: https://github.com/istio/istio/releases/download
 istio_platform: linux
 
 istio_parent_install_dir: /usr/local
+
+istio_cleanup: False
