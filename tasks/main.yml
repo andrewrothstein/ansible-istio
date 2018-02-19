@@ -1,19 +1,36 @@
 ---
-- name: download...
+- name: check for install...
   become: yes
   become_user: root
-  get_url:
-    url: '{{istio_tgz_url}}'
-    dest: /tmp/{{istio_tgz}}
-    mode: 0644
-- name: unarchive...
-  become: yes
-  become_user: root
-  unarchive:
-    remote_src: yes
-    src: /tmp/{{istio_tgz}}
-    dest: '{{istio_parent_install_dir}}'
-    creates: '{{istio_install_dir}}'
+  stat:
+    path: '{{istio_install_dir}}'
+  changed_when: False
+  register: istio_binary
+- when: not istio_binary.stat.exists
+  block:
+    - name: download...
+      become: yes
+      become_user: root
+      get_url:
+        url: '{{istio_tgz_url}}'
+        dest: /tmp/{{istio_tgz}}
+        mode: 0644
+    - name: unarchive...
+      become: yes
+      become_user: root
+      unarchive:
+        remote_src: yes
+        src: /tmp/{{istio_tgz}}
+        dest: '{{istio_parent_install_dir}}'
+        creates: '{{istio_install_dir}}'
+  always:
+    - name: cleanup...
+      become: yes
+      become_user: root
+      file:
+        path: /tmp/{{istio_tgz}}
+        state: absent
+
 - name: link...
   become: yes
   become_user: root
@@ -31,10 +48,3 @@
     src: '{{item.f}}.j2'
     dest: '{{item.d}}/{{item.f}}'
     mode: '{{item.m|default("0644")}}'
-- name: cleanup...
-  become: yes
-  become_user: root
-  when: istio_cleanup
-  file:
-    path: /tmp/{{istio_tgz}}
-    state: absent
