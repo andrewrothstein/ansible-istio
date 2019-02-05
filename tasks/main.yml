@@ -14,6 +14,7 @@
       get_url:
         url: '{{ istio_tgz_url }}'
         dest: /tmp/{{ istio_tgz }}
+        checksum: '{{ istio_checksum }}'
         mode: 0644
     - name: unarchive...
       become: yes
