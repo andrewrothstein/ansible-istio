@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-VER=1.2.2
+VER=1.2.4
 MIRROR=https://github.com/istio/istio/releases/download/$VER
 
 dl()
