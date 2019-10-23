@@ -1,6 +1,6 @@
 ---
 # defaults file for istio
-istio_ver: '1.3.1'
+istio_ver: '1.3.3'
 istio_mirror: https://github.com/istio/istio/releases/download
 
 istio_platform: linux
@@ -66,3 +66,17 @@ istio_checksums:
     osx: sha256:db23e38fdfedc7387a4bc6833fd9648a40e5b63918d2f3c55adde9c999a79e25
     # https://github.com/istio/istio/releases/download/1.3.1/istio-1.3.1-win.zip.sha256
     win: sha256:ba993bc685ffacc600802c24fe0e10593c44313eb98ededea2a700b9c5f44dd1
+  '1.3.2':
+    # https://github.com/istio/istio/releases/download/1.3.2/istio-1.3.2-linux.tar.gz.sha256
+    linux: sha256:619e17eb027db091858a4bfb4ecc12141f406912b6b7779a52bc27a336d35fdc
+    # https://github.com/istio/istio/releases/download/1.3.2/istio-1.3.2-osx.tar.gz.sha256
+    osx: sha256:29aee31bf88b99d474bf2a0ba072c01ba97246cc4a47b7c1c8e1093ee2fd8dac
+    # https://github.com/istio/istio/releases/download/1.3.2/istio-1.3.2-win.zip.sha256
+    win: sha256:65e9135ae7b0db3b337b9ce77a9dc6a0939f7e99468860285293f02b7345d096
+  '1.3.3':
+    # https://github.com/istio/istio/releases/download/1.3.3/istio-1.3.3-linux.tar.gz.sha256
+    linux: sha256:6ecdd10fdda6c61b232979cd1f420b9b688f97d3ec6a71c62d1b2977de7767cf
+    # https://github.com/istio/istio/releases/download/1.3.3/istio-1.3.3-osx.tar.gz.sha256
+    osx: sha256:887a1e808df66e1f0036d4542fb5ce2db041211d872b8848788f87ed7a6bb453
+    # https://github.com/istio/istio/releases/download/1.3.3/istio-1.3.3-win.zip.sha256
+    win: sha256:d32d486575df88fd9d40bbd4e68b4c52e8afa7bb8de34cb7df64acfc1d9d4f53
