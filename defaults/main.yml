@@ -52,6 +52,27 @@ istio_checksums:
     osx: sha256:e0f4b77dd52214b072a97336fe84431db71f9b2aa0775b9c02fb94a89cf0c637
     # https://github.com/istio/istio/releases/download/1.2.5/istio-1.2.5-win.zip.sha256
     win: sha256:4e728f196e7770ef4b99846930e164a7fe1da1eed64d2c19a2a75246097bfa58
+  '1.2.6':
+    # https://github.com/istio/istio/releases/download/1.2.6/istio-1.2.6-linux.tar.gz.sha256
+    linux: sha256:4978619164da5cd552f044450cd22eb4a6ac1a991cfdace1fffff87bc002933a
+    # https://github.com/istio/istio/releases/download/1.2.6/istio-1.2.6-osx.tar.gz.sha256
+    osx: sha256:b52fe7abad79c67e34c3053cf003ba56682d106aaa5abe5f0311996b1e6de694
+    # https://github.com/istio/istio/releases/download/1.2.6/istio-1.2.6-win.zip.sha256
+    win: sha256:1ee4987dc2fde14f98d34197feb3605ebd384e1945a5c635b197210a6f4bae1d
+  '1.2.7':
+    # https://github.com/istio/istio/releases/download/1.2.7/istio-1.2.7-linux.tar.gz.sha256
+    linux: sha256:c13893a1ca9b4a360dc55f9b3daaf79adccffd7df4947fd1739544d9e51ce407
+    # https://github.com/istio/istio/releases/download/1.2.7/istio-1.2.7-osx.tar.gz.sha256
+    osx: sha256:6cbaf1d17fc5ef809f193e2bdda03aab79ed57d3d7431314d3939fb5ab3deac5
+    # https://github.com/istio/istio/releases/download/1.2.7/istio-1.2.7-win.zip.sha256
+    win: sha256:b50b185bd9d655a07adbfd803de5068729fcea90c19cc85f0063445e58707b52
+  '1.2.9':
+    # https://github.com/istio/istio/releases/download/1.2.9/istio-1.2.9-linux.tar.gz.sha256
+    linux: sha256:a0795401fb0bd8e47af3b54145461d74d7f750f753855ee99c65be2bf01aad2b
+    # https://github.com/istio/istio/releases/download/1.2.9/istio-1.2.9-osx.tar.gz.sha256
+    osx: sha256:4abc628e7a96216d66e9d62b605be5a2cd9a5c915e7096383601635d67a44710
+    # https://github.com/istio/istio/releases/download/1.2.9/istio-1.2.9-win.zip.sha256
+    win: sha256:fa02c8f587104428644cc4ab0c5de7e893949f209d4f979659b1bbd2a3a6518f
   '1.3.0':
     # https://github.com/istio/istio/releases/download/1.3.0/istio-1.3.0-linux.tar.gz.sha256
     linux: sha256:1a5aa78a150247dd4539611134a82c5ca887afc8056e397dd4ed128cb145c7ef
