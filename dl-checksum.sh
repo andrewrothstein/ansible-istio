@@ -1,18 +1,22 @@
 #!/usr/bin/env sh
-VER=${1:-1.3.5}
 MIRROR=https://github.com/istio/istio/releases/download/$VER
 
 dl()
 {
-    local os=$1
-    local archive=$2
-    local url=$MIRROR/istio-$VER-${os}.${archive}.sha256
+    local ver=$1
+    local os=$2
+    local archive=$3
+    local url=$MIRROR/$ver/istio-${ver}-${os}.${archive}.sha256
     printf "    # %s\n" $url
-    printf "    %s: sha256:%s\n" $os `curl -sSL $url | awk '{print $1}'`
+    printf "    %s: sha256:%s\n" $os $(curl -sSL $url | awk '{print $1}')
 }
 
-printf "  '%s':\n" $VER
-dl linux tar.gz
-dl osx tar.gz
-dl win zip
+dl_ver() {
+    local ver=$1
+    printf "  '%s':\n" $ver
+    dl $ver linux tar.gz
+    dl $ver osx tar.gz
+    dl $ver win zip
+}
 
+dl_ver ${1:-1.4.2}
