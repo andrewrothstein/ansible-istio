@@ -1,6 +1,6 @@
 ---
 # defaults file for istio
-istio_ver: '1.4.4'
+istio_ver: '1.4.5'
 istio_mirror: https://github.com/istio/istio/releases/download
 
 istio_os: linux
@@ -129,3 +129,10 @@ istio_checksums:
     osx: sha256:1f9b51bcecb34e9e89926bc0655014397e701ceef4e46974fc85c32a187ed03e
     # https://github.com/istio/istio/releases/download//1.4.4/istio-1.4.4-win.zip.sha256
     win: sha256:459d902a11e9e04c26bd06ae958c87adb1224542fe3a81d16e09ceacea550767
+  '1.4.5':
+    # https://github.com/istio/istio/releases/download//1.4.5/istio-1.4.5-linux.tar.gz.sha256
+    linux: sha256:8c7d33c22cfe9b4ef965dc0718931527d24a7c33657fa173e011f00b367a82cf
+    # https://github.com/istio/istio/releases/download//1.4.5/istio-1.4.5-osx.tar.gz.sha256
+    osx: sha256:4621c209bb1b1a7252b65ea8e8fb41822faebc909c23d9f454bb4096710b51f8
+    # https://github.com/istio/istio/releases/download//1.4.5/istio-1.4.5-win.zip.sha256
+    win: sha256:37b57407743dc1b046298b88678e5a189ab9277853e4be2efa6a9253189653a0
