@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-MIRROR=https://github.com/istio/istio/releases/download/$VER
+MIRROR=https://github.com/istio/istio/releases/download
 
 dl()
 {
@@ -19,4 +19,4 @@ dl_ver() {
     dl $ver win zip
 }
 
-dl_ver ${1:-1.5.2}
+dl_ver ${1:-1.5.4}
