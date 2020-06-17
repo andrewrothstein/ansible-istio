@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 MIRROR=https://github.com/istio/istio/releases/download
 
 dl()
@@ -14,9 +15,11 @@ dl()
 dl_ver() {
     local ver=$1
     printf "  '%s':\n" $ver
-    dl $ver linux tar.gz
+    dl $ver linux-amd64 tar.gz
+    dl $ver linux-arm64 tar.gz
+    dl $ver linux-armv7 tar.gz
     dl $ver osx tar.gz
     dl $ver win zip
 }
 
-dl_ver ${1:-1.5.4}
+dl_ver ${1:-1.6.2}
