@@ -9,7 +9,7 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install...
+- name: check for install in {{ istio_install_dir }}
   become: yes
   become_user: root
   stat:
@@ -18,44 +18,47 @@
   register: istio_binary
 - when: not istio_binary.stat.exists
   block:
-    - name: download...
+    - name: downloading {{ istio_tgz_url }}
       become: yes
       become_user: root
       get_url:
         url: '{{ istio_tgz_url }}'
-        dest: /tmp/{{ istio_tgz }}
+        dest: '{{ istio_tmp_tgz }}'
         checksum: '{{ istio_checksum }}'
         mode: 0644
-    - name: unarchive...
+    - name: unarchiving {{ istio_tmp_tgz }} to {{ istio_parent_install_dir }}
       become: yes
       become_user: root
       unarchive:
         remote_src: yes
-        src: /tmp/{{ istio_tgz }}
+        src: '{{ istio_tmp_tgz }}'
         dest: '{{ istio_parent_install_dir }}'
         creates: '{{ istio_install_dir }}'
   always:
-    - name: cleanup...
+    - name: rm {{ istio_tmp_tgz }}
       become: yes
       become_user: root
       file:
-        path: /tmp/{{ istio_tgz }}
+        path: '{{ istio_tmp_tgz }}'
         state: absent
-
-- name: link...
-  become: yes
-  become_user: root
-  file:
-    src: '{{ istio_install_dir }}'
-    dest: '{{ istio_link_dir }}'
-    state: link
-- name: add to login shell path...
+- name: mark binaries and dirs as 0755
   become: yes
   become_user: root
   with_items:
-    - f: istio.sh
-      d: /etc/profile.d
-  template:
-    src: '{{ item.f }}.j2'
-    dest: '{{ item.d }}/{{ item.f }}'
-    mode: '{{ item.m|default("0644") }}'
+    - s: directory
+      p: '{{ istio_install_dir }}'
+    - s: directory
+      p: '{{ istio_install_dir }}/bin'
+    - s: file
+      p: '{{ istio_fq_exe }}'
+  file:
+    path: '{{ item.p }}'
+    state: '{{ item.s }}'
+    mode: 0755
+- name: linking {{ istio_link_exe }} to {{ istio_fq_exe }}
+  become: yes
+  become_user: root
+  file:
+    src: '{{ istio_fq_exe }}'
+    dest: '{{ istio_link_exe }}'
+    state: link

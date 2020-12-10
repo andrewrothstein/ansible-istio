@@ -2,7 +2,9 @@
 # vars file for istio
 istio_name: istio-{{ istio_ver }}
 istio_tgz: '{{ istio_name }}-{{ istio_os }}.{{ istio_archive | default("tar.gz") }}'
+istio_tmp_tgz: /tmp/{{ istio_tgz }}
 istio_tgz_url: '{{ istio_mirror }}/{{ istio_ver }}/{{ istio_tgz }}'
 istio_install_dir: '{{ istio_parent_install_dir }}/{{ istio_name }}'
-istio_link_dir: '{{ istio_parent_install_dir }}/istio'
+istio_fq_exe: '{{ istio_install_dir }}/bin/istioctl'
+istio_link_exe: '{{ istio_parent_install_dir }}/bin/istioctl'
 istio_checksum: '{{ istio_checksums[istio_ver][istio_os] }}'
