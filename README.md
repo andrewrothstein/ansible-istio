@@ -1,6 +1,6 @@
 andrewrothstein.istio
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-istio.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-istio)
+![Build Status](https://github.com/andrewrothstein/ansible-istio/actions/workflows/build.yml/badge.svg)
 
 Installs [istio](https://istio.io/).
 
