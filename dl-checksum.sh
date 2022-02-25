@@ -9,7 +9,7 @@ dl()
     local archive=$3
     local url=$MIRROR/$ver/istio-${ver}-${os}.${archive}.sha256
     printf "    # %s\n" $url
-    printf "    %s: sha256:%s\n" $os $(curl -sSL $url | awk '{print $1}')
+    printf "    %s: sha256:%s\n" $os $(curl -sSLf $url | awk '{print $1}')
 }
 
 dl_ver() {
@@ -22,4 +22,4 @@ dl_ver() {
     dl $ver win zip
 }
 
-dl_ver ${1:-1.12.1}
+dl_ver ${1:-1.13.0}
