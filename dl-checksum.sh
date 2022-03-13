@@ -19,7 +19,8 @@ dl_ver() {
     dl $ver linux-arm64 tar.gz
     dl $ver linux-armv7 tar.gz
     dl $ver osx tar.gz
+    dl $ver osx-arm64 tar.gz
     dl $ver win zip
 }
 
-dl_ver ${1:-1.13.1}
+dl_ver ${1:-1.13.2}
