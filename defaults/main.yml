@@ -1,6 +1,6 @@
 ---
 # defaults file for istio
-istio_ver: 1.13.3
+istio_ver: 1.13.4
 istio_os: linux-amd64
 
 istio_parent_install_dir: /usr/local
@@ -552,3 +552,16 @@ istio_checksums:
     osx-arm64: sha256:414b48ea57bde389e4cade8ff7ec0013ecc7ad682b8a1962edd9a7c2715a3931
     # https://github.com/istio/istio/releases/download/1.13.3/istio-1.13.3-win.zip.sha256
     win: sha256:3324638baf77132fb96b23e69d8290e007d3b06c87362f42c223dc8c14b79e32
+  '1.13.4':
+    # https://github.com/istio/istio/releases/download/1.13.4/istio-1.13.4-linux-amd64.tar.gz.sha256
+    linux-amd64: sha256:a7066afc8ff91266f8903ce6c3c994aafc12da80175c5a3f9f7ab0ed7eaa020f
+    # https://github.com/istio/istio/releases/download/1.13.4/istio-1.13.4-linux-arm64.tar.gz.sha256
+    linux-arm64: sha256:1d6f68e6ae636ad858f4acb97a4691818bb7b6a589d2fdb76b4615a0d482253c
+    # https://github.com/istio/istio/releases/download/1.13.4/istio-1.13.4-linux-armv7.tar.gz.sha256
+    linux-armv7: sha256:d1d5b03551184ca5fd599cb66c464ebddf97a3908ec0beca1c3b70b7f4f97358
+    # https://github.com/istio/istio/releases/download/1.13.4/istio-1.13.4-osx.tar.gz.sha256
+    osx: sha256:be571d4a2ee5d28dee93e68ad41b40e9151fa2e76af9a34ead7d9bfa8c126e5c
+    # https://github.com/istio/istio/releases/download/1.13.4/istio-1.13.4-osx-arm64.tar.gz.sha256
+    osx-arm64: sha256:655a1d48f15adfb2bf2d8c4770173b30c6c54c9ebd4710e61fd412c1ee4f1d02
+    # https://github.com/istio/istio/releases/download/1.13.4/istio-1.13.4-win.zip.sha256
+    win: sha256:b812c0849057eae0ca76a7a15d7ada305c1d03bf9420030fc44c505d8440285b
