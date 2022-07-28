@@ -24,6 +24,7 @@ galaxy_info:
   - name: EL
     versions:
     - 8
+    - 9
   - name: Fedora
     versions:
     - 35
@@ -32,3 +33,4 @@ galaxy_info:
     versions:
     - bionic
     - focal
+    - jammy
