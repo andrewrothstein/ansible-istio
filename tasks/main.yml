@@ -1,4 +1,6 @@
 ---
+- include_role:
+    name: andrewrothstein.unarchive-deps
 - name: resolve platform specific vars
   include_vars: '{{ item }}'
   with_first_found:
@@ -61,4 +63,11 @@
   file:
     src: '{{ istio_fq_exe }}'
     dest: '{{ istio_link_exe }}'
+    state: link
+- name: linking {{ istio_link_dir }} to {{ istio_install_dir }}
+  become: true
+  become_user: root
+  file:
+    src: '{{ istio_install_dir }}'
+    dest: '{{ istio_link_dir }}'
     state: link
