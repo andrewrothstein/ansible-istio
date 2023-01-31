@@ -12,16 +12,16 @@
       paths:
         - '{{ role_path }}/vars'
 - name: check for install in {{ istio_install_dir }}
-  become: yes
+  become: true
   become_user: root
   stat:
     path: '{{ istio_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: istio_binary
 - when: not istio_binary.stat.exists
   block:
     - name: downloading {{ istio_tgz_url }}
-      become: yes
+      become: true
       become_user: root
       get_url:
         url: '{{ istio_tgz_url }}'
@@ -29,22 +29,22 @@
         checksum: '{{ istio_checksum }}'
         mode: 0644
     - name: unarchiving {{ istio_tmp_tgz }} to {{ istio_parent_install_dir }}
-      become: yes
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
+        remote_src: true
         src: '{{ istio_tmp_tgz }}'
         dest: '{{ istio_parent_install_dir }}'
         creates: '{{ istio_install_dir }}'
   always:
     - name: rm {{ istio_tmp_tgz }}
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ istio_tmp_tgz }}'
         state: absent
 - name: mark binaries and dirs as 0755
-  become: yes
+  become: true
   become_user: root
   with_items:
     - s: directory
@@ -58,7 +58,7 @@
     state: '{{ item.s }}'
     mode: 0755
 - name: linking {{ istio_link_exe }} to {{ istio_fq_exe }}
-  become: yes
+  become: true
   become_user: root
   file:
     src: '{{ istio_fq_exe }}'
