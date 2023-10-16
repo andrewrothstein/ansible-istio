@@ -30,3 +30,4 @@ galaxy_info:
       versions:
         - focal
         - jammy
+  role_name: istio
