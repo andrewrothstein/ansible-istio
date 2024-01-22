@@ -1,8 +1,9 @@
 ---
-- include_role:
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
     name: andrewrothstein.unarchivedeps
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -11,39 +12,40 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install in {{ istio_install_dir }}
+- name: Check for install in {{ istio_install_dir }}
   become: true
   become_user: root
-  stat:
+  ansible.builtin.stat:
     path: '{{ istio_install_dir }}'
   changed_when: false
   register: istio_binary
-- when: not istio_binary.stat.exists
+- name: Download and install istio
+  when: not istio_binary.stat.exists
   block:
-    - name: downloading {{ istio_tgz_url }}
+    - name: Downloading {{ istio_tgz_url }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ istio_tgz_url }}'
         dest: '{{ istio_tmp_tgz }}'
         checksum: '{{ istio_checksum }}'
-        mode: 0644
-    - name: unarchiving {{ istio_tmp_tgz }} to {{ istio_parent_install_dir }}
+        mode: '644'
+    - name: Unarchiving {{ istio_tmp_tgz }} to {{ istio_parent_install_dir }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ istio_tmp_tgz }}'
         dest: '{{ istio_parent_install_dir }}'
         creates: '{{ istio_install_dir }}'
   always:
-    - name: rm {{ istio_tmp_tgz }}
+    - name: Rm -f {{ istio_tmp_tgz }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ istio_tmp_tgz }}'
         state: absent
-- name: mark binaries and dirs as 0755
+- name: Mark binaries and dirs as 755
   become: true
   become_user: root
   with_items:
@@ -53,21 +55,21 @@
       p: '{{ istio_install_dir }}/bin'
     - s: file
       p: '{{ istio_fq_exe }}'
-  file:
+  ansible.builtin.file:
     path: '{{ item.p }}'
     state: '{{ item.s }}'
-    mode: 0755
-- name: linking {{ istio_link_exe }} to {{ istio_fq_exe }}
+    mode: '755'
+- name: Linking {{ istio_link_exe }} to {{ istio_fq_exe }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ istio_fq_exe }}'
     dest: '{{ istio_link_exe }}'
     state: link
-- name: linking {{ istio_link_dir }} to {{ istio_install_dir }}
+- name: Linking {{ istio_link_dir }} to {{ istio_install_dir }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ istio_install_dir }}'
     dest: '{{ istio_link_dir }}'
     state: link

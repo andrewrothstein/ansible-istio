@@ -1,9 +1,14 @@
 ---
-- hosts: all
-  roles:
-    - role: '{{ playbook_dir }}'
+- name: Testing andrewrothstein.istio
+  hosts: all
   tasks:
-    - command: /usr/local/bin/istioctl version --remote=false
+    - name: Installing andrewrothstein.istio
+      ansible.builtin.include_role:
+        name: '{{ playbook_dir }}'
+    - name: Executing 'istioctl version --remote=false'
+      ansible.builtin.command: /usr/local/bin/istioctl version --remote=false
+      changed_when: false
       register: istio_test_output
-    - debug:
+    - name: Output from 'istioctl version --remote=false'
+      ansible.builtin.debug:
         msg: '{{ istio_test_output.stdout }}'
