@@ -1,7 +1,4 @@
 ---
-- name: Installing andrewrothstein.unarchivedeps
-  ansible.builtin.include_role:
-    name: andrewrothstein.unarchivedeps
 - name: Resolve platform specific vars
   ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
@@ -30,6 +27,9 @@
         dest: '{{ istio_tmp_tgz }}'
         checksum: '{{ istio_checksum }}'
         mode: '644'
+    - name: Installing andrewrothstein.unarchivedeps
+      ansible.builtin.include_role:
+        name: andrewrothstein.unarchivedeps
     - name: Unarchiving {{ istio_tmp_tgz }} to {{ istio_parent_install_dir }}
       become: true
       become_user: root
