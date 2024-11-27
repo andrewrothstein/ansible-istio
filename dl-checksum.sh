@@ -23,4 +23,4 @@ dl_ver() {
     dl $ver win zip
 }
 
-dl_ver ${1:-1.24.0}
+dl_ver ${1:-1.24.1}
