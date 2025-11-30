@@ -1,7 +1,7 @@
 ---
 # vars file for istio
-istio_os: '{{ istio_os_map[ansible_system] }}'
-istio_arch: '{{ istio_arch_map[ansible_architecture] }}'
+istio_os: '{{ istio_os_map[ansible_facts["system"]] }}'
+istio_arch: '{{ istio_arch_map[ansible_facts["architecture"]] }}'
 istio_platform: '{% if istio_os in ["osx", "win"] and istio_arch == "amd64" %}{{ istio_os }}{% else %}{{ istio_os }}-{{ istio_arch }}{% endif %}'
 istio_name: istio-{{ istio_ver }}
 istio_tgz: '{{ istio_name }}-{{ istio_platform }}.{{ istio_archive | default("tar.gz") }}'
