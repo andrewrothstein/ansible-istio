@@ -1,6 +1,6 @@
 ---
 # defaults file for istio
-istio_ver: 1.28.3
+istio_ver: 1.29.1
 istio_os_map:
   Linux: linux
   Darwin: osx
@@ -1405,3 +1405,55 @@ istio_checksums:
     osx-arm64: sha256:748da8498069348065611a7b38132e3f43cd4851b8b8f35c59531f38de944410
     # https://github.com/istio/istio/releases/download/1.28.3/istio-1.28.3-win.zip.sha256
     win: sha256:70dabe4de2c2bcc0bbf43d8f6b542ccb37a1e41ec55277e17aaed86273f8baa7
+  '1.28.4':
+    # https://github.com/istio/istio/releases/download/1.28.4/istio-1.28.4-linux-amd64.tar.gz.sha256
+    linux-amd64: sha256:4b599f32f923ffd41f51181c66e2b03c5d47037dc41aadfc1c75eebe1e351867
+    # https://github.com/istio/istio/releases/download/1.28.4/istio-1.28.4-linux-arm64.tar.gz.sha256
+    linux-arm64: sha256:9b80a59249823ce6c50cc2d77cfb6fe8249893ae6a1af792f3fcdfc0765d0487
+    # https://github.com/istio/istio/releases/download/1.28.4/istio-1.28.4-linux-armv7.tar.gz.sha256
+    linux-armv7: sha256:d6d039b8a5561ddcb735540fb9c5be07b686021c8824890d86e4d7fa79ccf57d
+    # https://github.com/istio/istio/releases/download/1.28.4/istio-1.28.4-osx.tar.gz.sha256
+    osx: sha256:1fc25eb64819c5e447ae7ba84fae5e2e5165440d0b87b49c12b1aa03d185b44a
+    # https://github.com/istio/istio/releases/download/1.28.4/istio-1.28.4-osx-arm64.tar.gz.sha256
+    osx-arm64: sha256:ea6c9a0bf279b15e3c6f1d1cf18c238548f1530a2aa17758541b2a6f10c6251a
+    # https://github.com/istio/istio/releases/download/1.28.4/istio-1.28.4-win.zip.sha256
+    win: sha256:77eebd1475ffdf4e359fdc5ff6fe18ec314f96dae09d44a7f27690ebd4219b2c
+  '1.28.5':
+    # https://github.com/istio/istio/releases/download/1.28.5/istio-1.28.5-linux-amd64.tar.gz.sha256
+    linux-amd64: sha256:9d6d5da65b84c796f28c8399b1eb28afb4bbb3d329a3b672c7ac2dad77d5d085
+    # https://github.com/istio/istio/releases/download/1.28.5/istio-1.28.5-linux-arm64.tar.gz.sha256
+    linux-arm64: sha256:5a216953f0b5b9aa89ea31ad1005fab7046ed7ebe361db41916d714a39d79e3e
+    # https://github.com/istio/istio/releases/download/1.28.5/istio-1.28.5-linux-armv7.tar.gz.sha256
+    linux-armv7: sha256:902b27726ea30059909ff2c8dfba92c6e34f97250b149551602955c5c7d8f56d
+    # https://github.com/istio/istio/releases/download/1.28.5/istio-1.28.5-osx.tar.gz.sha256
+    osx: sha256:b26a8d4170bb5291d3864427fe2e20bd6030e592050d881d4d93354cb6d4785f
+    # https://github.com/istio/istio/releases/download/1.28.5/istio-1.28.5-osx-arm64.tar.gz.sha256
+    osx-arm64: sha256:b4b900d0903f01698497c2a71d207d7b1cbeff7ac708584d6f5d4db8ba9c3b33
+    # https://github.com/istio/istio/releases/download/1.28.5/istio-1.28.5-win.zip.sha256
+    win: sha256:b6261aed03443a4a95cfa88ab03160a783ff5cbf2dcb79f343df0cfb35cb7a54
+  '1.29.0':
+    # https://github.com/istio/istio/releases/download/1.29.0/istio-1.29.0-linux-amd64.tar.gz.sha256
+    linux-amd64: sha256:7d0855002c2254df46f109a5a90964249a119f3c7c3a109fdd2d1582ce71ae6f
+    # https://github.com/istio/istio/releases/download/1.29.0/istio-1.29.0-linux-arm64.tar.gz.sha256
+    linux-arm64: sha256:b365ad5a5de23b598a6f2e73d55913507a6d52d40645786bd99b834299cd4c02
+    # https://github.com/istio/istio/releases/download/1.29.0/istio-1.29.0-linux-armv7.tar.gz.sha256
+    linux-armv7: sha256:5390978c8c910591bc7dcca5b7d6991222cbe7577c888584b05568da449432e6
+    # https://github.com/istio/istio/releases/download/1.29.0/istio-1.29.0-osx.tar.gz.sha256
+    osx: sha256:5d7734d84370a3935f8bf831282ac46d86ada83d4d074637d0ec0eb2aa19557c
+    # https://github.com/istio/istio/releases/download/1.29.0/istio-1.29.0-osx-arm64.tar.gz.sha256
+    osx-arm64: sha256:d070e6f2b0ad42883eedf6f10fd9094c637816eaffacde88dabfccd7eb041c52
+    # https://github.com/istio/istio/releases/download/1.29.0/istio-1.29.0-win.zip.sha256
+    win: sha256:aae9daa2d0d4c2259904022bd73620c6a8ceaba1b505a9f78a6ffc8fa730fa31
+  '1.29.1':
+    # https://github.com/istio/istio/releases/download/1.29.1/istio-1.29.1-linux-amd64.tar.gz.sha256
+    linux-amd64: sha256:5a4e0b85899b0cf237546af5ec0c63b0e22afd2ccc5cde2ea0ec4cf413bdde9c
+    # https://github.com/istio/istio/releases/download/1.29.1/istio-1.29.1-linux-arm64.tar.gz.sha256
+    linux-arm64: sha256:2de0879e4fd2a247f6687aabca6fdd9bccde73bbe24ff622048d4fde1c651ae5
+    # https://github.com/istio/istio/releases/download/1.29.1/istio-1.29.1-linux-armv7.tar.gz.sha256
+    linux-armv7: sha256:b13ff98f4bcf47aa56daa6c038dc529784756948e99b278e60aa1eadbd4db981
+    # https://github.com/istio/istio/releases/download/1.29.1/istio-1.29.1-osx.tar.gz.sha256
+    osx: sha256:2a068b12e340b0feca4ab89c85e9789effa1b39e2bf57991c3473dee42894ea5
+    # https://github.com/istio/istio/releases/download/1.29.1/istio-1.29.1-osx-arm64.tar.gz.sha256
+    osx-arm64: sha256:35aef694599b98cc5d07afcfa931e3dbad77cd0cc4ac56307cb3ad870ff3cb68
+    # https://github.com/istio/istio/releases/download/1.29.1/istio-1.29.1-win.zip.sha256
+    win: sha256:b40c87f08624a153abb53a01660eb1dee697ce531aa03e64ca8021461aa01cd7
